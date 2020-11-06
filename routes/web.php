@@ -36,3 +36,9 @@ Route::get('/update',function (){
    $user = User::find(1);
    $user->posts()->where('id',1)->update(['title'=>'1 new php title','body'=>'1 this is new body']);;
 });
+
+//Delete data
+Route::get('/delete',function (){
+    $user = User::find(1);
+    $user->posts()->whereId(9)->delete();
+});
