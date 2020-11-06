@@ -30,3 +30,9 @@ Route::get('/read',function (){
         echo $post->title . "<br>";
     }
 });
+
+//Update data
+Route::get('/update',function (){
+   $user = User::find(1);
+   $user->posts()->where('id',1)->update(['title'=>'1 new php title','body'=>'1 this is new body']);;
+});
